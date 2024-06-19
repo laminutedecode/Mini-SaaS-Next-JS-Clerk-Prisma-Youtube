@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini SaaS
 
-## Getting Started
+Ce repository contient le code source pour la création d'un SaaS avec les technologies suivantes :
+- Next.js
+- Clerk
+- Prisma
+- SQLite
+- Tailwind CSS
 
-First, run the development server:
+## Prérequis
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js et npm installés
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clonez ce repository :
+    ```bash
+    git clone https://github.com/laminutedecode/Mini-SaaS-Next-JS-Clerk-Prisma-Youtube
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Installez les dépendances :
+    ```bash
+    npm install
+    ```
+3. Configurez les variables d'environnement. Créez un fichier `.env.local` et ajoutez les variables nécessaires :
+    ```bash
+        DATABASE_URL="URLDataBase"
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="ClerkKey"
+        CLERK_SECRET_KEY="ClerkSecret"
+        NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+        NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+        NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/dashboard
+        NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=/dashboard
+    ```
+4. Exécutez les migrations de Prisma pour configurer la base de données :
+    ```bash
+    npx prisma migrate dev --name init
+    ```
+5. Lancez l'application en mode développement :
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+## Utilisation
 
-To learn more about Next.js, take a look at the following resources:
+Vous pouvez maintenant accéder à l'application SaaS à l'adresse `http://localhost:3000`. Utilisez les fonctionnalités d'authentification, de gestion des utilisateurs, et de traitement des paiements intégrées.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contribution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer, veuillez suivre ces étapes :
+1. Forkez ce repository.
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/ma-fonctionnalite`).
+3. Commitez vos modifications (`git commit -am 'Ajoutez ma fonctionnalité'`).
+4. Poussez votre branche (`git push origin feature/ma-fonctionnalite`).
+5. Ouvrez une Pull Request.
 
-## Deploy on Vercel
+## Licence
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ce projet est la propriété de LaMinuteDeCode. Il est strictement interdit de copier ou de vendre ces ressources sans autorisation préalable. Voir le fichier `LICENSE` pour plus de détails.
