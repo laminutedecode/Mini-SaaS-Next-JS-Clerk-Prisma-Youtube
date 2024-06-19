@@ -4,6 +4,9 @@ CREATE TABLE "User" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "image" TEXT,
+    "description" TEXT,
+    "website" TEXT,
+    "job" TEXT,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
     "clerkUserId" TEXT
