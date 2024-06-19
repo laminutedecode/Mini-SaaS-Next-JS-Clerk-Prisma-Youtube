@@ -1,6 +1,6 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { SignOutButton } from "@clerk/nextjs";
+
 import { addUser, getUser } from "@/services/userService";
 import Image from "next/image"
 
@@ -26,9 +26,7 @@ export default async function PageDashboard() {
 
   return (
     <section className="w-full h-screen flex items-center justify-center flex-col relative">
-        <SignOutButton>
-          <button className="bg-red-500 hover:bg-red-600 text-white rounded-md p-3 absolute top-6 right-6">Déconnexion</button>
-        </SignOutButton>
+    
       <form action="" className="max-w-[500px] w-full mx-auto flex flex-col space-y-2 shadow-md rounded-md p-3 ">
         <Image src={data?.image as string} width={150} height={150} alt="" className="rounded-full self-center"/>
         <label htmlFor="name" className="text-sm">Votre nom:</label>
