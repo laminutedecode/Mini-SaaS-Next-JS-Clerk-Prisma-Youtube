@@ -15,8 +15,8 @@ export default function DashboardNav() {
         <div className="mb-4">
           {MenuDashboard.map((link, index)=> (
           <Link key={index} href={link.path} className="flex items-center gap-2 p-3 hover:bg-red-800 hover:text-white rounded-md">
-            <link.icon/>
-            <p>{link.name}</p>
+            <link.icon className="w-4"/>
+            <p className="text-sm">{link.name}</p>
           </Link>
         ))}
         </div>
