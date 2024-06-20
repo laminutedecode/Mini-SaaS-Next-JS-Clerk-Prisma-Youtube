@@ -63,7 +63,7 @@ export default async function ProfilPage({ params }: UpdatePageProps) {
         </div>
           <span className="font-bold">Description:</span>
       </div>
-      <p  className="my-2">{user.userDescription}</p>
+      <p  className="my-2 text-justify">{user.userDescription}</p>
       <h4 className="uppercase font-bold text-orange-500">Réseaux sociaux</h4>
       <ul className="flex items-center gap-2">
         <li>

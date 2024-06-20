@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { SignOutButton } from "@clerk/nextjs";
-import { FaUser, FaSignOutAlt, FaHome   } from "react-icons/fa";
+import { FaSignOutAlt, FaHome   } from "react-icons/fa";
 import { IoIosSettings } from "react-icons/io";
 
 export default function DashboardNav() {
