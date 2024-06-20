@@ -3,20 +3,20 @@
 import {prisma} from "@/lib/db"
 import { redirect } from "next/navigation";
 
-export const addUser = async(clerkUserId: string, name: string, email: string, image: string) => {
+export const addUser = async(clerkUserId: string, userName: string, userEmail: string, userImage: string) => {
   try {
     const user = await prisma.user.upsert({
       where: {clerkUserId},
       update: {
-        name,
-        email,
-        image
+        userName,
+        userEmail,
+        userImage
       },
       create: {
         clerkUserId,
-        name,
-        email,
-        image
+        userName,
+        userEmail,
+        userImage
       }
     });
     return user
@@ -43,17 +43,18 @@ export const getUser = async(clerkUserId: string) => {
 
 export const updateUser = async (formData: FormData) => {
   try {
-    const userName = formData.get('name') as string; 
-    const userJob = formData.get('job') as string; 
-    const userDescription = formData.get('description') as string; 
-    const userSite = formData.get('site') as string; 
+    const userJob = formData.get('userJob') as string; 
+    const userDescription = formData.get('userDescription') as string; 
+    const userSite = formData.get('userWebsite') as string; 
+    const userInstagram = formData.get('userInstagram') as string; 
+    const userYoutube = formData.get('userYoutube') as string; 
     const id = formData.get('id') as string; 
 
 
-    if (userName !== null) {
+    if (id !== null) {
       await prisma.user.update({
         where: { id } ,
-        data: { name: userName, job: userJob, description:userDescription , website: userSite},
+        data: { userJob: userJob, userDescription:userDescription , userWebsite: userSite, userInstagram:userInstagram , userYoutube: userYoutube},
       });
     }
   } catch (error) {
@@ -62,3 +63,12 @@ export const updateUser = async (formData: FormData) => {
     redirect('/dashboard')
   } 
 };
+
+export const getAllUsers = async()=> {
+  const allUsers = await prisma.user.findMany({
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
+  return allUsers;
+}
