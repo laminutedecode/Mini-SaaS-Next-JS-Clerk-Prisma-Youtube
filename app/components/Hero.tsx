@@ -1,5 +1,4 @@
-import { MdKeyboardArrowDown } from "react-icons/md";
-
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -10,10 +9,12 @@ const Hero = () => {
       <div className="relative z-10 flex items-center justify-center h-full bg-black bg-opacity-50">
         <div className="text-center text-white flex flex-col justify-center items-center gap-4">
           <h1 className="text-4xl font-bold md:text-6xl">FRIENDS<span className='text-orange-500'>DEV</span></h1>
-          <p className="mt-4 text-xl md:text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum ipsa dolorem rerum voluptatibus vel!</p>
-          <a href="#mainSection" className=" bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center h-10 w-10 rounded-full bg-opacity-50">
-            <MdKeyboardArrowDown/>
-          </a>
+          <p className="mt-4 text-xl md:text-2xl">Trouver le bon développeur pour votre projet</p>
+          <Link href="/sign-in">
+            <button className=" bg-orange-500 hover:bg-orange-600 text-white rounded-md p-3">
+              Commencer l'aventure
+            </button>
+          </Link>
 
         </div>
       </div>

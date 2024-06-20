@@ -8,7 +8,7 @@ export default async function HomeDashboard() {
   const dataUsers = await getAllUsers()
 
   return (
-    <section id="mainSection" className="w-full p-3 pt-6">
+    <section className="w-full p-3 pt-6">
       <p className="text-muted-foreground text-lg text-center text-orange-500">Trouver le développeur qui vous convient</p>
       <h2 className="text-4xl uppercase text-center font-black mb-8">Un projet ? Une solution !</h2>
       <div className="max-w-[1000px] w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
