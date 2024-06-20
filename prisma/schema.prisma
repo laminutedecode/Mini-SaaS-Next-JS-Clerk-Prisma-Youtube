@@ -24,3 +24,5 @@ model User {
   updatedAt DateTime @updatedAt
   clerkUserId String? @unique
 }
+
+

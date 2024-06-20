@@ -4,6 +4,8 @@ import Image from "next/image";
 import { FaInstagram, FaYoutube,FaGlobe   } from "react-icons/fa";
 import { MdWork,MdArticle, MdOutlineChevronLeft    } from "react-icons/md";
 
+
+
 interface Params {
   id: string;
   userName: string;
@@ -29,14 +31,17 @@ export default async function ProfilPage({ params }: UpdatePageProps) {
   return (
     <section className="h-screen max-w-[1000px] mx-auto w-full pt-10 relative">
 
+
       <Link href='/dashboard/home'>
         <button className="bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-1 rounded-md p-2 ">
-          <MdOutlineChevronLeft  className="w-4"/>
+          <MdOutlineChevronLeft  />
           <span>Retour</span>
         </button>
       </Link>
 
-      <div className="flex flex-col gap-2 border border-gray-300 rounded-md p-5 mt-5">
+
+
+      <div className="flex flex-col gap-2 border border-gray-300 rounded-md p-5 mt-5 relative">
 
       <Image src={user?.userImage as string} alt={`Photo de profil de ${user.userName}`} width={100} height={100} className="rounded-full"/>
       <h3 className=" text-4xl font-black uppercase mt-4">{user.userName}</h3>
