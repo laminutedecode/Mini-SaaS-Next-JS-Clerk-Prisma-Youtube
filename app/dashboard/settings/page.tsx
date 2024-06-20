@@ -4,7 +4,7 @@ import { addUser, getUser, updateUser } from "@/services/userService";
 import Image from "next/image"
 
 
-export default async function PageDashboard() {
+export default async function SettingsDashboard() {
 
   const { userId } = auth();
 
@@ -24,7 +24,7 @@ export default async function PageDashboard() {
   const data = await getUser(userId)
 
   return (
-    <section className="w-full h-screen p-3 ">
+    <section className="w-full p-3 ">
       <div className="m-4">
         <p className="text-muted-foreground uppercase text-red-600">Vos informations</p>
         <h1 className="text-xl uppercase font-black md:text-2xl lg:text-4xl">Profil</h1>
@@ -47,7 +47,7 @@ export default async function PageDashboard() {
         <input id="userYoutube" name="userYoutube" className="h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userYoutube as string}  />
         <label htmlFor="userInstagram" className="text-sm">Instagram</label>
         <input id="userInstagram" name="userInstagram" className="h-12 p-3 rounded-md border border-gray-300" type="url" defaultValue={data?.userInstagram as string}  />    
-        <button className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-md">Modifier</button>
+        <button className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-md">Modifier</button>
 
       </form>
 

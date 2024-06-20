@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }: {children: React.ReactNode
   }
 
   return (
-      <section className="mx-auto w-full min-h-[100vh] mt-2 p-2 flex">
+      <section className="mx-auto w-full  mt-2 p-2 flex">
         <div className="w-2/12 h-screen border-r border-gray-400 p-3">
           <DashboardNav/>
         </div>

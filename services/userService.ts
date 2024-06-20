@@ -60,7 +60,7 @@ export const updateUser = async (formData: FormData) => {
   } catch (error) {
     console.error('Error updating user:', error);
   }finally {
-    redirect('/dashboard')
+    redirect('/dashboard/home')
   } 
 };
 
