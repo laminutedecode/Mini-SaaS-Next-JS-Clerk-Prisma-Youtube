@@ -1,13 +1,23 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import DashboardNav from "../components/dashboard/DashboardNav";
+import { addUser } from "@/services/userService";
 
-export default function DashboardLayout({ children }: {children: React.ReactNode}) {
+export default async function DashboardLayout({ children }: {children: React.ReactNode}) {
 
   const { userId } = auth();
 
   if (!userId) {
     redirect('/');
+  }
+
+  const user = await currentUser();
+
+  if(userId && user){
+    const fullName = `${user.firstName} ${user.lastName}` || "";
+    const email = user.emailAddresses[0]?.emailAddress || "";
+    const image = user.imageUrl || "";
+    await addUser(userId, fullName, email, image)
   }
 
   return (

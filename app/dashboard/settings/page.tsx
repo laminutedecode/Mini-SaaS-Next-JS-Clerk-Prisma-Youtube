@@ -1,6 +1,6 @@
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { addUser, getUser, updateUser } from "@/services/userService";
+import { getUser, updateUser } from "@/services/userService";
 import Image from "next/image"
 
 
@@ -12,14 +12,7 @@ export default async function SettingsDashboard() {
     redirect('/');
   }
 
-  const user = await currentUser();
 
-  if(userId && user){
-    const fullName = `${user.firstName} ${user.lastName}` || "";
-    const email = user.emailAddresses[0]?.emailAddress || "";
-    const image = user.imageUrl || "";
-    await addUser(userId, fullName, email, image)
-  }
 
   const data = await getUser(userId)
 
