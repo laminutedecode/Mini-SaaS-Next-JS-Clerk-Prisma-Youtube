@@ -25,10 +25,8 @@ export default async function SettingsDashboard() {
 
   return (
     <section className="w-full p-3 ">
-      <div className="m-4">
-        <p className="text-muted-foreground uppercase text-red-600">Vos informations</p>
-        <h1 className="text-xl uppercase font-black md:text-2xl lg:text-4xl">Profil</h1>
-      </div>
+      <p className="text-muted-foreground text-lg text-center text-orange-500">Vos informations</p>
+      <h2 className="text-4xl uppercase text-center font-black mb-8">Profil</h2>
     
       <form  action={updateUser} className="w-full flex flex-col space-y-3 rounded-md p-3 ">
         <input type="hidden" name="id" id="id" value={data?.id} />

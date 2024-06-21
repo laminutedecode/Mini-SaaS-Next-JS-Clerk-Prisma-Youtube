@@ -11,7 +11,8 @@ CREATE TABLE "User" (
     "userJob" TEXT,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    "clerkUserId" TEXT
+    "clerkUserId" TEXT,
+    "admin" BOOLEAN NOT NULL DEFAULT false
 );
 
 -- CreateIndex
